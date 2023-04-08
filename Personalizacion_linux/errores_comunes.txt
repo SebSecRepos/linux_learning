@@ -1,0 +1,13 @@
+Error al moverse a travez del texto con ctrl + flechas
+	Solución kitty/kitty.conf
+
+Transparencia
+	Solución kitty/kitty.conf y picom/.picom.conf
+
+Errores con comandos de consola como ifconfig:
+	Estos errores se solucionan modificando la variable de entorno $PATH
+	Para ello abrir una bash no zsh si no bash comun, y ejecutar echo $PATH
+	copiar el output y en el fichero .zshrc crear la variable PATH y le damos
+	como valor el output copiado
+
+

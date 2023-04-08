@@ -1,0 +1,38 @@
+Desde consola:
+
+	sudo ifconfig enp0s3 192.168.1.19 netmask 255.255.254.0 broadcast 192.168.1.255 
+	sudo route add default gw 192.168.0.128 enp0s3  
+
+
+
+Desde fichero requiere reiniciar el SO
+
+	nano /etc/network/interfaces 
+
+	CONTENIDO:	
+		auto enp0s3
+
+		iface enp0s3 inet static
+
+		address 192.168.1.19
+
+		netmask 255.255.254.0
+
+		gateway 192.168.1.1
+		
+		dns-nameservers 192.168.1.1 8.8.8.8
+
+
+Levantar interfaz
+
+	opcion 1: sudo ip link set nombreadaptador up
+	opcion 2: sudo ifconfig nombreadaptador up 
+
+Ver redes wifi:
+	opcion1:	 nmcli dev wifi  ---->     Para ver información adicional de las redes  ------> nmcli -f ALL dev wifi
+	opcion2:	iwlist wlx54c9ff02d48c scan
+
+Conectarse a una wlan
+
+	sudo iwconfig wlx54c9ff02d48c essid "nombreredwifi" key s:"contraseña" 
+
